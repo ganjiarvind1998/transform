@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #image {
+            width: 200px;
+            transition: transform 0.5s ease-in-out;
+            margin-top: 100px;
+            margin-left: 100px;
+            border: 2px solid black;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .transform-button {
+            margin-right: 30px;
+            padding: 10px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            background-color: rgb(129, 139, 99);
+            border-radius: 3px;
+            color: white;
+        }
+        #scale:target ~ #image {
+            transform: scale(1.5);
+        }
+        #rotate:target ~ #image {
+            transform: rotate(45deg);
+        }
+        #skew:target ~ #image {
+            transform: skew(20deg, 20deg);
+        }
+        #translate:target ~ #image {
+            transform: translate(50px, 50px);
+        }
+    </style>
+</head>
+<body>
+    <h1>Transform Image</h1>
+    <div class="button-container">
+        <a id="scale-link" class="transform-button" href="#scale">Scale</a>
+        <a id="rotate-link" class="transform-button" href="#rotate">Rotate</a>
+        <a id="skew-link" class="transform-button" href="#skew">Skew</a>
+        <a id="translate-link" class="transform-button" href="#translate">Translate</a>
+    </div>
+    <div id="scale"></div>
+    <div id="rotate"></div>
+    <div id="skew"></div>
+    <div id="translate"></div>
+    <img id="image" src="./template/house2.jpg" alt="Image">
+</body>
+</html>
